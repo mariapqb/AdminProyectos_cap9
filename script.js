@@ -1,0 +1,440 @@
+const initialTopics = [
+  {
+    id: 1,
+    title: 'Introducción',
+    summary: 'El uso de SCRUM fuera de los limites del desarrollo de software.',
+    stage: 'todo',
+    accent: 'border-board-sand/30',
+    presenter: {
+      name: 'Michael Aguirre',
+      avatar: 'https://media.licdn.com/dms/image/v2/D4E03AQE8c7l8nAP4qQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718315583698?e=1777507200&v=beta&t=Au691nCXo4C55w1KX8RjkUlCVSK7bcP9aEzIJfpoxOE',
+    },
+    content: [
+      {
+        title: 'SCRUM mas alla del software',
+        image: 'https://i.ytimg.com/vi/7KQ0r6B1suw/maxresdefault.jpg',
+        text: 'SCRUM ha demostrado ser una metodologia efectiva para gestionar proyectos complejos y dinamicos. Aunque se originó para el desarrollo de software, sus principios de iteracion, colaboracion y adaptacion continua pueden aplicarse en una amplia variedad de contextos, desde proyectos academicos hasta implementaciones en ambitos gubernamentales',
+      },
+    ],
+    tip: 'Damos un contexto general de la exposición. Es importante que la audiencia entienda que Scrum no es solo para programadores, sino una forma de organizar el trabajo en equipo que puede adaptarse a muchos escenarios diferentes.',
+  },
+  {
+    id: 2,
+    title: 'Transformando la Educación con eduScrum',
+    summary: 'Cómo Scrum está revolucionando las aulas a través del aprendizaje colaborativo y la mejora continua.',
+    stage: 'todo',
+    accent: 'border-board-mint/30',
+    presenter: {
+      name: 'Erik',
+      avatar: '',
+    },
+    content: [
+      {
+        title: 'Principios de eduScrum',
+        image: '',
+        text: 'Aprendizaje basado en equipos autoorganizados, iteraciones cortas (sprints) y visualización del progreso mediante tableros Scrum.',
+      },
+      {
+        title: 'El nuevo rol docente',
+        image: '',
+        text: 'El docente actúa como facilitador y mentor, no como la única autoridad, fomentando el "Efecto Protégé" (aprender enseñando).',
+      },
+    ],
+    tip: 'Resalta que el profesor no pierde poder, sino que gana un rol de mentor más efectivo.',
+  },
+  {
+    id: 3,
+    title: 'eduScrum en el Ashram College',
+    summary: 'Caso de éxito en los Países Bajos aplicando metodologías ágiles en educación secundaria.',
+    stage: 'todo',
+    accent: 'border-board-sky/30',
+    presenter: {
+      name: 'Erik',
+      avatar: '',
+    },
+    content: [
+      {
+        title: 'Auto-organización Estudiantil',
+        image: '',
+        text: 'Los estudiantes forman equipos de cuatro personas, enseñándose mutuamente. El profesor actúa como facilitador, no como "policía".',
+      },
+      {
+        title: 'Mecánica de Clase',
+        image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop',
+        text: 'Los equipos usan tableros de Scrum ("flops") con columnas "Pendientes", "En proceso" y "Terminado". Los Sprints duran 4-5 semanas y finalizan con una prueba.',
+      },
+    ],
+    tip: 'Menciona que los "flops" son versiones físicas y dinámicas del tablero que los alumnos aman usar.',
+  },
+  {
+    id: 4,
+    title: 'La Definición de Diversión',
+    summary: 'La importancia del ambiente positivo y el concepto de Gezelligheid en el éxito académico.',
+    stage: 'todo',
+    accent: 'border-board-sand/30',
+    presenter: {
+      name: 'Erik',
+      avatar: '',
+    },
+    content: [
+      {
+        title: 'Definición de Diversión',
+        image: '',
+        text: 'Los alumnos de Ashram College añaden esta métrica basada en la confianza, el humor y el concepto holandés de Gezelligheid (sociabilidad y agrado).',
+      },
+      {
+        title: 'Resultados Concretos',
+        image: '',
+        text: 'Se reporta un aumento de más del 10% en las calificaciones de los exámenes, junto con una mejora significativa en habilidades sociales.',
+      },
+    ],
+    tip: 'Explica que la "Definición de Diversión" es tan importante como la "Definición de Hecho" en eduScrum.',
+  },
+  {
+    id: 5,
+    title: 'El Efecto Protegido (CCI)',
+    summary: 'Los fundamentos cognitivos de por qué enseñar a otros mejora el aprendizaje propio.',
+    stage: 'todo',
+    accent: 'border-board-coral/30',
+    presenter: {
+      name: 'Erik',
+      avatar: '',
+    },
+    content: [
+      {
+        title: 'C - Primado Cognitivo',
+        image: '',
+        text: 'Tu cerebro actúa como un filtro inteligente buscando ejemplos y analogías porque sabes que alguien más te va a preguntar "¿por qué?".',
+      },
+      {
+        title: 'C - Consolidación',
+        image: '',
+        text: 'Al hablar en voz alta y recibir feedback inmediato de los compañeros, confirmas lo que sabes y detectas errores al instante.',
+      },
+      {
+        title: 'I - Integración',
+        image: '',
+        text: 'Finalmente, la información se "pega" a la memoria a largo plazo como un esquema sólido, no como un dato suelto.',
+      },
+    ],
+    tip: 'Usa este tema para cerrar la importancia de la colaboración en eduScrum.',
+  },
+  {
+    id: 6,
+    title: 'Gobierno',
+    summary: 'Uso de SCRUM en el ámbito gubernamental.',
+    stage: 'todo',
+    accent: 'border-board-coral/30',
+    presenter: {
+      name: 'Michael Aguirre',
+      avatar: 'https://media.licdn.com/dms/image/v2/D4E03AQE8c7l8nAP4qQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718315583698?e=1777507200&v=beta&t=Au691nCXo4C55w1KX8RjkUlCVSK7bcP9aEzIJfpoxOE',
+    },
+    content: [
+      {
+        title: 'Implementación en Washington D.C. 2012',
+        image: 'https://www.ionos.com/digitalguide/fileadmin/_processed_/d/0/csm_EN-smart-5-criteria_00655f7e45.webp',
+        text: 'En el 2012, se implementó la metodologia SMART, llamado asi por el equipo de gobierno del gobernador Inslee. Se trata de un metodo similar a SCRUM, adaptado a las necesidades de un gobierno local. El objetivo era mejorar la eficiencia, transparencia y adaptabilidad de los proyectos gubernamentales, permitiendo una mejor respuesta a las necesidades de los ciudadanos. Michael De Angelo, subdirector de información, menciona que el objetivo era entregar politicas practicas e implementables en los departamentos estatales cada semana.',
+      },
+      {
+        title: 'El caso de Islandia en 2008',
+        image: 'https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/BC42/production/_95149184_iceland2getty.jpg.webp',
+        text: 'Islandia sufrio una gran crisis financiera en el 2008. Los bancos perdieron el control de los precios y la población salio a protestar activamente. Esto llevo al gobierno de turno a implementar la metodologia Agile para gestionar la crisis. Se formaron equipos multidisciplinarios que trabajaban en ciclos cortos para abordar los problemas mas urgentes, como la estabilización del sistema financiero, la proteccion de los depositantes y la reestructuración de la economia. Esta aproximacion permitio al gobierno responder de manera rapida y efectiva a los desafios emergentes durante la crisis.',
+      },
+    ],
+    tip: 'Durante 200 años, la politica tradicional se a incrustado fielmente. Procesos burocraticos y poca inclusion de los gobernados en el proceso.',
+  },
+  {
+    id: 7,
+    title: 'SCRUM para combatir la pobreza',
+    summary: 'Como los principios de Scrum pueden mejorar la calidad de vida en comunidades vulnerables.',
+    stage: 'todo',
+    accent: 'border-board-emerald/30',
+    presenter: {
+      name: 'Juan Carlos Celis',
+      avatar: 'https://media.licdn.com/dms/image/v2/D4E03AQE90sdhVPH1Jg/profile-displayphoto-scale_400_400/B4EZoPdqYIKcAg-/0/1761196026088?e=1777507200&v=beta&t=C22KU9347183QMH_ixvkBdSYesyRfo-X-Buz5rw5swk',
+    },
+    content: [
+      {
+        title: 'El problema',
+        image: 'https://borgenproject.org/wp-content/uploads/Poverty-in-Uganda.jpg',
+        text: 'En muchos paises como Uganda, miles de personas viven en pobreza extrema. Muchos agricultores trabajan todos los dias, pero aun asi ganan muy poco debido a la falta de informacion, acceso a tecnologia y organizacion en su trabajo.',
+      },
+      {
+        title: 'La solucion',
+        image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1200&auto=format&fit=crop',
+        text: 'Organizaciones como Grameen Foundation implementaron equipos comunitarios que usaban telefonos moviles para compartir informacion sobre precios, cultivos y mejores practicas. Esto permitio a las personas tomar mejores decisiones en tiempo real.',
+      },
+      {
+        title: 'Donde entra Scrum',
+        image: '',
+        text: 'Aunque no se uso Scrum de forma tradicional, si se aplicaron sus principios: trabajo en equipo, comunicacion constante, adaptacion rapida y mejora continua. Las comunidades aprendian, compartian y mejoraban sus resultados constantemente.',
+      },
+      {
+        title: 'Resultados',
+        image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop',
+        text: 'Los resultados fueron impresionantes: los agricultores duplicaron su produccion y sus ingresos. Dejaron de depender de intermediarios y empezaron a negociar mejor sus productos gracias a la informacion.',
+      },
+      {
+        title: 'Idea clave',
+        image: '',
+        text: 'La pobreza no siempre es falta de esfuerzo, muchas veces es falta de informacion y de sistemas eficientes. Scrum demuestra que al organizar mejor el trabajo y compartir conocimiento, es posible generar cambios reales.',
+      },
+    ],
+    tip: 'Enfatiza que no se trata de tecnologia avanzada, sino de como las personas trabajan juntas. Puedes hacer una pausa despues de mencionar que duplicaron sus ingresos para generar impacto.',
+  },
+  {
+    id: 8,
+    title: 'Cómo trabajaremos todos algún día',
+    summary: 'El trabajo moderno esta cada vez más orientado a equipos colaborativos y procesos iterativos.',
+    stage: 'todo',
+    accent: 'border-fuchsia-300/30',
+    presenter: {
+      name: 'María Paula Quintin',
+      avatar: 'https://media.licdn.com/dms/image/v2/D5603AQHil6hy8yidRw/profile-displayphoto-scale_400_400/B56ZgWA8KbH0Ag-/0/1752716002593?e=1777507200&v=beta&t=PhZlvnXsuc1kzmkAdrrtLZHUMQmVX0qBPdDDShCt9uY',
+    },
+    content: [
+      {
+        title: 'Valve, una empresa sin jefes',
+        image: 'https://cloudfront-us-east-1.images.arcpublishing.com/copesa/ZLZGLDZ4SFH3TFDDWFZKWHBIGE.png',
+        text: 'Valve, empresa de videojuegos, opera con una estructura totalmente plana: sin jefes, sin jerarquías tradicionales. Un experimento radical en organización laboral que desafía décadas de modelos de gestión.',
+      },
+      {
+        title: 'Revisión entre pares',
+        image: 'https://external-preview.redd.it/a-view-from-the-valve-office-v0-jUhFPACfbNMQQmC30JDvxOcvJi0k1IRqb2AlD-8A3jY.jpg?auto=webp&s=b127f1e4d9fca1848f88b8f9d06c27fc27d4f1e4',
+        text: 'El sistema se mantiene gracias a la constante revisión entre iguales, eliminando la necesidad de una estructura de mando tradicional. Al no haber jefes, los empleados deben ser proactivos, colaborativos y responsables de su propio trabajo, lo que fomenta un ambiente de innovación y autonomía.',
+      },
+      {
+        title: 'Conclusión',
+        image: 'https://is1-ssl.mzstatic.com/image/thumb/Publication113/v4/14/ef/82/14ef820d-9f13-eabe-cc51-43cb97016263/1027936556.jpg/1200x1200wz.jpg',
+        text: 'Scrum no es solo una metodología: es una herramienta para vencer el cinismo y materializar el cambio. En lugar de aceptar el mundo como es o simplemente desear uno mejor, ofrece un método práctico para la transformación. \n\n - "Scrum no es solo una forma de trabajar, es una forma de pensar. Es la creencia de que, a través de la colaboración, la transparencia y la adaptabilidad, podemos construir un futuro mejor, no solo en el trabajo, sino en cualquier aspecto de nuestras vidas." - Jeff Sutherland, co-creador de Scrum.',
+      },
+    ],
+    tip: 'Termina con una conclusion de una sola frase que sea facil de recordar.',
+  },
+];
+
+let topics = structuredClone(initialTopics);
+let activeTopicId = null;
+
+const columns = {
+  todo: document.getElementById('todo-column'),
+  working: document.getElementById('working-column'),
+  done: document.getElementById('done-column'),
+};
+
+const modal = document.getElementById('topic-modal');
+const modalStage = document.getElementById('modal-stage');
+const modalTitle = document.getElementById('modal-title');
+const modalSubtitle = document.getElementById('modal-subtitle');
+const modalContent = document.getElementById('modal-content');
+const modalTip = document.getElementById('modal-tip');
+
+const countEls = {
+  todo: document.getElementById('todo-count'),
+  working: document.getElementById('working-count'),
+  done: document.getElementById('done-count'),
+  total: document.getElementById('total-count'),
+};
+
+function getStageLabel(stage) {
+  return {
+    todo: 'TODO',
+    working: 'WORKING',
+    done: 'DONE',
+  }[stage];
+}
+
+function createCard(topic) {
+  const card = document.createElement('button');
+  card.type = 'button';
+  card.className = `topic-card ${topic.accent} block w-full text-left`;
+  card.dataset.id = String(topic.id);
+  card.draggable = true;
+
+  card.innerHTML = `
+    <div class="mb-4 flex items-start justify-between gap-3">
+      <span class="pill ${topic.stage}">${getStageLabel(topic.stage)}</span>
+      <span class="rounded-full border border-white/10 px-2 py-1 text-[11px] uppercase tracking-[0.2em] text-slate-400">Tema ${topic.id}</span>
+    </div>
+    <div class="mb-4 flex items-center gap-3">
+      ${renderPresenterAvatar(topic.presenter)}
+      <div class="min-w-0">
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Expositor</p>
+        <p class="truncate text-sm font-semibold text-slate-200">${topic.presenter.name}</p>
+      </div>
+    </div>
+    <h4 class="pr-4 font-display text-xl font-bold text-white">${topic.title}</h4>
+    <p class="mt-3 text-sm leading-6 text-slate-300">${topic.summary}</p>
+    <div class="mt-5 flex items-center justify-between text-xs text-slate-400">
+      <span>Click para abrir</span>
+      <span>Mover al avanzar</span>
+    </div>
+  `;
+
+  card.addEventListener('click', () => openModal(topic.id));
+  card.addEventListener('dragstart', (event) => {
+    event.dataTransfer.setData('text/plain', String(topic.id));
+  });
+
+  return card;
+}
+
+function renderPresenterAvatar(presenter) {
+  if (presenter.avatar) {
+    return `
+      <img
+        src="${presenter.avatar}"
+        alt="Foto de ${presenter.name}"
+        class="h-12 w-12 rounded-full border border-white/15 object-cover"
+      />
+    `;
+  }
+
+  return `
+    <div class="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 text-sm font-bold text-white">
+      ${presenter.name.slice(0, 1).toUpperCase()}
+    </div>
+  `;
+}
+
+function renderBoard() {
+  Object.values(columns).forEach((column) => {
+    column.innerHTML = '';
+  });
+
+  topics.forEach((topic) => {
+    columns[topic.stage].appendChild(createCard(topic));
+  });
+
+  updateCounts();
+}
+
+function updateCounts() {
+  const totals = topics.reduce(
+    (acc, topic) => {
+      acc[topic.stage] += 1;
+      return acc;
+    },
+    { todo: 0, working: 0, done: 0 }
+  );
+
+  countEls.todo.textContent = totals.todo;
+  countEls.working.textContent = totals.working;
+  countEls.done.textContent = totals.done;
+  countEls.total.textContent = topics.length;
+}
+
+function openModal(topicId) {
+  const topic = topics.find((item) => item.id === topicId);
+
+  if (!topic) {
+    return;
+  }
+
+  activeTopicId = topicId;
+  modalStage.textContent = `Estado actual: ${getStageLabel(topic.stage)}`;
+  modalTitle.textContent = topic.title;
+  modalSubtitle.textContent = topic.summary;
+  modalTip.textContent = topic.tip;
+
+  const presenterBlock = `
+    <div class="mb-4 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+      ${renderPresenterAvatar(topic.presenter)}
+      <div>
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Expositor asignado</p>
+        <p class="text-sm font-semibold text-white">${topic.presenter.name}</p>
+      </div>
+    </div>
+  `;
+
+  modalContent.innerHTML =
+    presenterBlock +
+    topic.content
+      .map(
+        (section) => `
+        <article class="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+          ${
+            section.image
+              ? `<img src="${section.image}" alt="${section.title}" class="h-44 w-full object-cover" />`
+              : ''
+          }
+          <div class="p-5">
+            <h5 class="text-base font-bold text-white">${section.title}</h5>
+            <p class="mt-3 text-sm leading-7 text-slate-200">${section.text}</p>
+          </div>
+        </article>
+      `
+      )
+      .join('');
+
+  modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden', 'false');
+}
+
+function closeModal() {
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+  activeTopicId = null;
+}
+
+function moveTopic(topicId, nextStage) {
+  topics = topics.map((topic) =>
+    topic.id === topicId ? { ...topic, stage: nextStage } : topic
+  );
+
+  renderBoard();
+
+  if (activeTopicId === topicId) {
+    openModal(topicId);
+  }
+}
+
+Object.entries(columns).forEach(([stage, column]) => {
+  column.addEventListener('dragover', (event) => {
+    event.preventDefault();
+    column.classList.add('is-active');
+  });
+
+  column.addEventListener('dragleave', () => {
+    column.classList.remove('is-active');
+  });
+
+  column.addEventListener('drop', (event) => {
+    event.preventDefault();
+    column.classList.remove('is-active');
+    const topicId = Number(event.dataTransfer.getData('text/plain'));
+    if (topicId) {
+      moveTopic(topicId, stage);
+    }
+  });
+});
+
+document.getElementById('close-modal').addEventListener('click', closeModal);
+
+modal.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+    closeModal();
+  }
+});
+
+document.querySelectorAll('.move-btn').forEach((button) => {
+  button.addEventListener('click', () => {
+    if (activeTopicId !== null) {
+      moveTopic(activeTopicId, button.dataset.moveTarget);
+    }
+  });
+});
+
+document.getElementById('reset-board').addEventListener('click', () => {
+  topics = structuredClone(initialTopics);
+  closeModal();
+  renderBoard();
+});
+
+renderBoard();
